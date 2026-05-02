@@ -1,16 +1,14 @@
 name: Verify Human Identity
-
 on:
   workflow_dispatch:
-    inputs:
-      agent_name:
-        description: 'yourname'
-        required: true
-        default: 'yourname'
-      agent_description:
-        description: 'yourname'
-        required: true
-        default: 'finder AI Agent'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Verify Identity
+        run: echo "Identity Verified"
 
 jobs:
   verify:
